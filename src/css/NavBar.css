@@ -1,0 +1,29 @@
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css?family=Didact+Gothic|IBM+Plex+Mono|Poppins");
+@import url()"https://fonts.googleapis.com/css?family=Amatic+SC|Caveat|Gochi+Hand|Shadows+Into+Light")
+
+* {
+  font-family: "'Caveat', cursive";
+}
+
+.NavBar {
+  border-radius: 10px;
+  margin-right: 10px;
+  padding: 5px 5px;
+  border: 10px;
+  border-style: solid;
+  border-color: black;
+  width: 100%;
+
+  background-image: linear-gradient(to right top, #800a43, #f359a3, #ab0d591);
+  background-repeat: no-repeat;
+  font-family: "'Caveat', cursive";
+  font-size: 24px;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: row;
+
+  align-items: left;
+  margin-bottom: 1px;
+}
