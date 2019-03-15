@@ -33,26 +33,77 @@ class CurrentInputForm extends Component {
       });
   }
 
-  handleClick = event => {
-    event.preventDefault();
-    console.log(this.state.baseCurrAmount);
+  handleChange = event => {
+    //  console.log(event.target.name, event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   };
-  // this.state.rates["usdaud"]
 
-  // submitFunction = (country, amount) => {
-  //  let targetCode = codes.filter(code => code.name === country)
-  //  let rate = this.state.rates[targetCode.code]
-  //  let finalTotal = rate * amount
-  //  this.setState({
-  //    desiredCurrAmount: finalTotal
-  //  })
-  // }
-  //
+  handleSelectChange = event => {
+    //console.log(event.target.name, event.target.value);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  handleClick = event => {
+    //console.log(this.state.desiredCurrCode);
+    event.preventDefault();
+    let targetCode = this.state.desiredCurrCode;
+    //  console.log(targetCode);
+    let rate = this.state.rates[targetCode];
+    // console.log(rate);
+    // console.log(this.state.baseCurrAmount);
+    let amount = this.state.baseCurrAmount;
+    //console.log(amount);
+    let finalTotal = rate * amount;
+    finalTotal = finalTotal.toFixed(2);
+    //console.log(finalTotal);
+
+    this.setState({ desiredCurrAmount: finalTotal }, () => {
+      //console.log(this.state.desiredCurrAmount);
+    });
+
+    this.setState({ exchangeRate: rate }, () => {
+      //  console.log(this.state.exchangeRate);
+    });
+  };
+  handleClickClear = event => {
+    //  console.log(event.target.name, event.target.value);
+    this.setState({ desiredCurrAmount: 0 }, () => {
+      //console.log(this.state.desiredCurrAmount);
+    });
+
+    this.setState({ exchangeRate: 0 }, () => {
+      //  console.log(this.state.exchangeRate);
+    });
+    this.setState({ baseCurrAmount: 1 }, () => {
+      //  console.log(this.state.baseCurrAmount);
+    });
+
+    this.setState({ desiredCurrName: "" }, () => {
+      //  console.log(this.desiredCurrName);
+    });
+    this.setState({ desiredCurrCode: "" }, () => {
+      //  console.log(this.desiredCurrCode);
+    });
+  };
+
+  createOptions = () => {
+    return codes.map(code => {
+      return (
+        <option key={code.code} value={code.code}>
+          {code.name}
+        </option>
+      );
+    });
+  };
 
   render() {
     //console.log(this.state);
     //console.log(codes.filter(code => code.name === "Argentine Peso"));
-    console.log(codes);
+    //  console.log(codes);
+
     return (
       <div>
         <h1> Test- CurrentInputForm </h1>
@@ -64,6 +115,7 @@ class CurrentInputForm extends Component {
               name="baseCurrName"
               data-id={this.baseCurrName}
               defaultValue={this.state.baseCurrName}
+              onChange={this.handleChange}
             />
           </div>
           <div className="baseAmount">
@@ -71,13 +123,21 @@ class CurrentInputForm extends Component {
             <input
               type="text"
               name="baseCurrAmount"
-              defaultValue={this.state.baseCurrAmount}
+              onChange={this.handleChange}
+              //defaultValue={this.state.baseCurrAmount}
             />
           </div>
           <div className="desiredCurrName">
             <label>Enter the currency you want:</label>
-            <select value={codes.name} />
+            <select
+              className="selection dropdown"
+              name="desiredCurrCode"
+              onChange={this.handleSelectChange}
+            >
+              {this.createOptions()}
+            </select>
           </div>
+
           <div className="convertButton">
             <input
               className="button"
@@ -86,8 +146,19 @@ class CurrentInputForm extends Component {
               value="Convert!"
             />
           </div>
+          <div className="clearButton">
+            <input
+              className="button"
+              onClick={this.handleClickClear}
+              type="submit"
+              value="Clear request"
+            />
+          </div>
         </form>
-        <CurrentResponse />
+        <CurrentResponse
+          exchangeRate={this.state.exchangeRate}
+          desiredCurrAmount={this.state.desiredCurrAmount}
+        />
       </div>
     );
   }
