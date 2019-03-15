@@ -1,122 +1,120 @@
-const codedata = {
-  codes: [
-    {
-      code: "ARS",
-      name: "Argentine Peso"
-    },
-    {
-      code: "AUD",
-      name: "Australian Dollar"
-    },
-    {
-      code: "BRL",
-      name: "Brazilian Real"
-    },
-    {
-      code: "BTC",
-      name: "Bitcoin"
-    },
-    {
-      code: "CAD",
-      name: "Canadian Dollar"
-    },
-    {
-      code: "CHF",
-      name: "Swiss Franc"
-    },
-    {
-      code: "CNY",
-      name: "Chinese Yuan"
-    },
-    {
-      code: "DKK",
-      name: "Danish Krone"
-    },
-    {
-      code: "EUR",
-      name: "Euro"
-    },
-    {
-      code: "GBP",
-      name: "British Pound Sterling"
-    },
-    {
-      code: "HKD",
-      name: "Hong Kong Dollar"
-    },
-    {
-      code: "HUF",
-      name: "Hungarian Forint"
-    },
-    {
-      code: "IDR",
-      name: "Indonesian Rupiah"
-    },
-    {
-      code: "ILS",
-      name: "Israeli New Sheqel"
-    },
-    {
-      code: "INR",
-      name: "Indian Rupee"
-    },
-    {
-      code: "JPY",
-      name: "Japanese Yen"
-    },
-    {
-      code: "KRW",
-      name: "South Korean Won"
-    },
-    {
-      code: "MXN",
-      name: "Mexican Peso"
-    },
-    {
-      code: "MYR",
-      name: "Malaysian Ringgit"
-    },
-    {
-      code: "NOK",
-      name: "Norwegian Krone"
-    },
-    {
-      code: "NZD",
-      name: "New Zealand Dollar"
-    },
-    {
-      code: "PHP",
-      name: "Philippine Peso"
-    },
-    {
-      code: "RUB",
-      name: "Russian Ruble"
-    },
-    {
-      code: "SEK",
-      name: "Swedish Krona"
-    },
-    {
-      code: "SGD",
-      name: "Singapore Dollar"
-    },
-    {
-      code: "THB",
-      name: "Thai Baht"
-    },
-    {
-      code: "TRY",
-      name: "Turkish Lira"
-    },
-    {
-      code: "USD",
-      name: "United States Dollar"
-    },
-    {
-      code: "ZAR",
-      name: "South African Rand"
-    }
-  ]
-};
+const codes = [
+  {
+    code: "USDARS",
+    name: "Argentine Peso"
+  },
+  {
+    code: "USDAUD",
+    name: "Australian Dollar"
+  },
+  {
+    code: "USDBRL",
+    name: "Brazilian Real"
+  },
+  {
+    code: "USDBTC",
+    name: "Bitcoin"
+  },
+  {
+    code: "USDCAD",
+    name: "Canadian Dollar"
+  },
+  {
+    code: "USDCHF",
+    name: "Swiss Franc"
+  },
+  {
+    code: "USDCNY",
+    name: "Chinese Yuan"
+  },
+  {
+    code: "USDDKK",
+    name: "Danish Krone"
+  },
+  {
+    code: "USDEUR",
+    name: "Euro"
+  },
+  {
+    code: "USDGBP",
+    name: "British Pound Sterling"
+  },
+  {
+    code: "USDHKD",
+    name: "Hong Kong Dollar"
+  },
+  {
+    code: "USDHUF",
+    name: "Hungarian Forint"
+  },
+  {
+    code: "USDIDR",
+    name: "Indonesian Rupiah"
+  },
+  {
+    code: "USDILS",
+    name: "Israeli New Sheqel"
+  },
+  {
+    code: "USDINR",
+    name: "Indian Rupee"
+  },
+  {
+    code: "USDJPY",
+    name: "Japanese Yen"
+  },
+  {
+    code: "USDKRW",
+    name: "South Korean Won"
+  },
+  {
+    code: "USDMXN",
+    name: "Mexican Peso"
+  },
+  {
+    code: "USDMYR",
+    name: "Malaysian Ringgit"
+  },
+  {
+    code: "USDNOK",
+    name: "Norwegian Krone"
+  },
+  {
+    code: "USDNZD",
+    name: "New Zealand Dollar"
+  },
+  {
+    code: "USDPHP",
+    name: "Philippine Peso"
+  },
+  {
+    code: "USDRUB",
+    name: "Russian Ruble"
+  },
+  {
+    code: "USDSEK",
+    name: "Swedish Krona"
+  },
+  {
+    code: "USDSGD",
+    name: "Singapore Dollar"
+  },
+  {
+    code: "USDTHB",
+    name: "Thai Baht"
+  },
+  {
+    code: "USDTRY",
+    name: "Turkish Lira"
+  },
+  {
+    code: "USDUSD",
+    name: "United States Dollar"
+  },
+  {
+    code: "USDZAR",
+    name: "South African Rand"
+  }
+];
 
-export default codedata;
+export default codes;

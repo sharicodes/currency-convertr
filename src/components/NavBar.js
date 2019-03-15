@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/NavBar.css";
+
 import cclogo from "../cclogo.png";
 
 class NavBar extends Component {
