@@ -1,39 +1,40 @@
 import React, { Component } from "react";
 import CurrentInputForm from "./CurrentInputForm";
+import HistoricalDataForm from "./HistoricalDataForm";
 import background from "../background.jpg";
-import codes from "./CodeData";
 
 class CurrentDataContainer extends Component {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     baseCurrCode: "USD",
-  //     baseCurrName: "US Dollar",
-  //     baseCurrAmount: 1,
-  //     desiredCurrCode: "",
-  //     desiredCurrName: "",
-  //     exchangeRate: 0,
-  //     desiredCurrAmount: 0,
-  //     rates: {}
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      historical: false
+    };
+  }
+
+  showHistorical = () => {
+    this.setState({
+      historical: true
+    });
+  };
+  showHistoricalForm = () => {
+    if (this.state.historical === true) {
+      return <HistoricalDataForm />;
+    } else if (this.state.historical === false) {
+      return <CurrentInputForm />;
+    }
+  };
 
   render() {
-    //console.log(codes);
     return (
-      <div className="CurrentDataContainer">
-        <h1>Test- CurrencyDataContainer</h1>
-        {/*  <img src={background} className="background" alt="currency" />*/}
-
-        <CurrentInputForm
-        //   baseCurrCode={this.state.baseCurrCode}
-        //   baseCurrName={this.state.baseCurrName}
-        //   baseCurrAmount={this.state.baseCurrAmount}
-        //   desiredCurrCode={this.state.desiredCurrCode}
-        //   desiredCurrName={this.state.desiredCurrCode}
-        //   exchangeRate={this.state.exchangeRate}
-        //   desiredCurrAmount={this.state.desiredCurrAmount}
+      <div className="historicalDataButton">
+        {this.showHistoricalForm()}
+        <input
+          className="button"
+          onClick={this.showHistorical}
+          type="submit"
+          value="View Historical Data Instead"
         />
+        <div className="CurrentDataContainer" />
       </div>
     );
   }

@@ -20,6 +20,7 @@ class CurrentInputForm extends Component {
   componentDidMount() {
     fetch(
       // real endpoint
+
       // "http://www.apilayer.net/api/live?access_key=b9bba49cc12e1fab9b229b77c1868a4a"
       // json-server --watch db.json -p 4000
       "http://localhost:4000/quotes"
@@ -106,7 +107,7 @@ class CurrentInputForm extends Component {
 
     return (
       <div>
-        <h1> Test- CurrentInputForm </h1>
+        <h1> Current Exchange Rate InputForm </h1>
         <form className="CurrentInputForm">
           <div className="baseName">
             <label>Enter the currency you have: </label>
@@ -155,10 +156,12 @@ class CurrentInputForm extends Component {
             />
           </div>
         </form>
-        <CurrentResponse
-          exchangeRate={this.state.exchangeRate}
-          desiredCurrAmount={this.state.desiredCurrAmount}
-        />
+        <div>
+          <CurrentResponse
+            exchangeRate={this.state.exchangeRate}
+            desiredCurrAmount={this.state.desiredCurrAmount}
+          />
+        </div>
       </div>
     );
   }
