@@ -49,49 +49,20 @@ class HistoricalDataForm extends Component {
       [event.target.name]: event.target.value
     });
   };
-  // handleClick = event => {
-  //   //console.log(this.state.desiredCurrCode);
-  //   event.preventDefault();
-  //   let targetCode = this.state.desiredCurrCode;
-  //   //  console.log(targetCode);
-  //   let rate = this.state.rates[targetCode];
-  //   // console.log(rate);
-  //   // console.log(this.state.baseCurrAmount);
-  //   let amount = this.state.baseCurrAmount;
-  //   //console.log(amount);
-  //   let finalTotal = rate * amount;
-  //   finalTotal = finalTotal.toFixed(2);
-  //   //console.log(finalTotal);
-  //
-  //   this.setState({ desiredCurrAmount: finalTotal }, () => {
-  //     //console.log(this.state.desiredCurrAmount);
-  //   });
-  //
-  //   this.setState({ exchangeRate: rate }, () => {
-  //     //  console.log(this.state.exchangeRate);
-  //   });
-  // };
-  // handleClickClear = event => {
-  //   //  console.log(event.target.name, event.target.value);
-  //   this.setState({ desiredCurrAmount: 0 }, () => {
-  //     //console.log(this.state.desiredCurrAmount);
-  //   });
-  //
-  //   this.setState({ exchangeRate: 0 }, () => {
-  //     //  console.log(this.state.exchangeRate);
-  //   });
-  //   this.setState({ baseCurrAmount: 1 }, () => {
-  //     //  console.log(this.state.baseCurrAmount);
-  //   });
-  //
-  //   this.setState({ desiredCurrName: "" }, () => {
-  //     //  console.log(this.desiredCurrName);
-  //   });
-  //   this.setState({ desiredCurrCode: "" }, () => {
-  //     //  console.log(this.desiredCurrCode);
-  //   });
-  // };
-  //
+  handleHistoricalClick = event => {
+    console.log(this.state.convertCurrCode);
+    event.preventDefault();
+    let targetHistCode = this.state.convertCurrCode;
+    console.log(targetHistCode);
+    // let rate = this.state.rates[targetHistCode];
+    // console.log(rate);
+  };
+
+  // this.setState({ exchangeRate: rate }, () => {
+  //   //  console.log(this.state.exchangeRate);
+  // });
+  //};
+
   createHistoricalOptions = () => {
     return codes.map(code => {
       return (
@@ -103,10 +74,6 @@ class HistoricalDataForm extends Component {
   };
 
   render() {
-    //console.log(this.state);
-    //console.log(codes.filter(code => code.name === "Argentine Peso"));
-    //  console.log(codes);
-
     return (
       <div>
         <h1> Historical Rate Input Form </h1>
@@ -132,7 +99,7 @@ class HistoricalDataForm extends Component {
             </select>
           </div>
 
-          <div className="convertButton">
+          <div className="showHistoryChartButton">
             <input
               className="button"
               onClick={this.handleHistoricalClick}
