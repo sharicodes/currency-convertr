@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
+import historicalRates from "./ChartDataTest";
 
 class HistoricalDataForm extends Component {
   constructor() {
@@ -8,33 +9,9 @@ class HistoricalDataForm extends Component {
       usCurrCode: "USD",
       usCurrName: "US Dollar",
       convertCurrCode: "",
-      convertCurrName: "",
-      currExchangeRate: 0,
-      threeMonthExchangeRate: 0,
-      sixMonthExchangeRate: 0,
-      oneYearExchangeRate: 0,
-      threeYearExchangeRate: 0,
-      fiveYearExchangeRate: 0,
-      apiRates: {}
+      convertCurrName: ""
     };
   }
-
-  // componentDidMount() {
-  //   fetch(
-  //     // real endpoint
-  //
-  //     // "http://www.apilayer.net/api/live?access_key=b9bba49cc12e1fab9b229b77c1868a4a"
-  //     // json-server --watch db.json -p 4000
-  //     "http://localhost:4000/quotes"
-  //   )
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       //console.log(data);
-  //       this.setState({
-  //         rates: data.quotes
-  //       });
-  //     });
-  // }
 
   handleHistoricalChange = event => {
     //  console.log(event.target.name, event.target.value);
@@ -50,18 +27,20 @@ class HistoricalDataForm extends Component {
     });
   };
   handleHistoricalClick = event => {
-    console.log(this.state.convertCurrCode);
+    //console.log(this.state.convertCurrCode);
     event.preventDefault();
     let targetHistCode = this.state.convertCurrCode;
-    console.log(targetHistCode);
-    // let rate = this.state.rates[targetHistCode];
-    // console.log(rate);
-  };
+    //console.log(targetHistCode);
 
-  // this.setState({ exchangeRate: rate }, () => {
-  //   //  console.log(this.state.exchangeRate);
-  // });
-  //};
+    //console.log(historicalRates[targetHistCode].current); //gives us the right object
+    let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
+      entry => {
+        //console.log(entry);
+        let data = { entry };
+        //console.log(data);
+      }
+    );
+  };
 
   createHistoricalOptions = () => {
     return codes.map(code => {
@@ -74,6 +53,7 @@ class HistoricalDataForm extends Component {
   };
 
   render() {
+    console.log(data);
     return (
       <div>
         <h1> Historical Rate Input Form </h1>
