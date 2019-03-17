@@ -32,7 +32,7 @@ class CurrentDataContainer extends Component {
           className="button"
           onClick={this.showHistorical}
           type="submit"
-          value="View Historical Data Instead"
+          value="View Historical Data"
         />
         <div className="CurrentDataContainer" />
       </div>

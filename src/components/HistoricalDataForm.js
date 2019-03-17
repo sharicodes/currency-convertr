@@ -30,21 +30,21 @@ class HistoricalDataForm extends Component {
       [event.target.name]: event.target.value
     });
   };
-  handleHistoricalClick = event => {
-    //console.log(this.state.convertCurrCode);
-    event.preventDefault();
-    let targetHistCode = this.state.convertCurrCode;
-    console.log(targetHistCode);
-
-    console.log(historicalRates[targetHistCode]); //gives us the right object
-    // let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
-    //   entry => {
-    //     console.log(entry);
-    //     let data = { entry };
-    //     console.log(data);
-    //   }
-    // );
-  };
+  // handleHistoricalClick = event => {
+  //   //console.log(this.state.convertCurrCode);
+  //   event.preventDefault();
+  //   let targetHistCode = this.state.convertCurrCode;
+  //   console.log(targetHistCode);
+  //
+  //   console.log(historicalRates[targetHistCode]); //gives us the right object
+  //   // let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
+  //   //   entry => {
+  //   //     console.log(entry);
+  //   //     let data = { entry };
+  //   //     console.log(data);
+  //   //   }
+  //   // );
+  // };
 
   createHistoricalOptions = () => {
     return codes.map(code => {
@@ -82,14 +82,6 @@ class HistoricalDataForm extends Component {
             </select>
           </div>
 
-          <div className="showHistoryChartButton">
-            <input
-              className="button"
-              onClick={this.handleHistoricalClick}
-              type="submit"
-              value="View Historical Rates"
-            />
-          </div>
           <div className="clearButton">
             <input
               className="button"
@@ -104,5 +96,15 @@ class HistoricalDataForm extends Component {
     );
   }
 }
+
+//<div className="showHistoryChartButton">
+
+//<input
+//className="button"
+//  onClick={this.handleHistoricalClick}
+// type="submit"
+// value="View Historical Rates"
+//>
+//</div>
 
 export default HistoricalDataForm;
