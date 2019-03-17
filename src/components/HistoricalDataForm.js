@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
 import historicalRates from "./ChartDataTest";
+import ReactChartkick, { LineChart } from "react-chartkick";
+import Chart from "chart.js";
+
+ReactChartkick.addAdapter(Chart);
 
 class HistoricalDataForm extends Component {
   constructor() {
@@ -30,16 +34,16 @@ class HistoricalDataForm extends Component {
     //console.log(this.state.convertCurrCode);
     event.preventDefault();
     let targetHistCode = this.state.convertCurrCode;
-    //console.log(targetHistCode);
+    console.log(targetHistCode);
 
-    //console.log(historicalRates[targetHistCode].current); //gives us the right object
-    let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
-      entry => {
-        //console.log(entry);
-        let data = { entry };
-        //console.log(data);
-      }
-    );
+    console.log(historicalRates[targetHistCode]); //gives us the right object
+    // let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
+    //   entry => {
+    //     console.log(entry);
+    //     let data = { entry };
+    //     console.log(data);
+    //   }
+    // );
   };
 
   createHistoricalOptions = () => {
@@ -53,7 +57,6 @@ class HistoricalDataForm extends Component {
   };
 
   render() {
-    console.log(data);
     return (
       <div>
         <h1> Historical Rate Input Form </h1>
@@ -96,6 +99,7 @@ class HistoricalDataForm extends Component {
             />
           </div>
         </form>
+        <LineChart data={historicalRates[this.state.convertCurrCode]} />
       </div>
     );
   }
