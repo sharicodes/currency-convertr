@@ -28,3 +28,8 @@
   align-items: left;
   margin-bottom: 0px;
 }
+.CurrentDataContainer {
+  background-image: url("../background.jpg");
+
+  height: 100%;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
 import historicalRates from "./ChartDataTest";
-import ReactChartkick, { LineChart } from "react-chartkick";
+import ReactChartkick, { LineChart, AreaChart } from "react-chartkick";
 import Chart from "chart.js";
 
 ReactChartkick.addAdapter(Chart);
@@ -59,7 +59,7 @@ class HistoricalDataForm extends Component {
   render() {
     return (
       <div>
-        <h1> Historical Rate Input Form </h1>
+        <h1> Historical Rates- 5 Year trend </h1>
         <form className="HistoricalInputForm">
           <div className="usCurrName">
             <label>Enter the currency you have: </label>
@@ -91,7 +91,12 @@ class HistoricalDataForm extends Component {
             />
           </div>
         </form>
-        <LineChart data={historicalRates[this.state.convertCurrCode]} />
+        <AreaChart
+          colors={["#163913"]}
+          xtitle="Time"
+          ytitle="Rate"
+          data={historicalRates[this.state.convertCurrCode]}
+        />
       </div>
     );
   }

@@ -107,7 +107,7 @@ class CurrentInputForm extends Component {
 
     return (
       <div>
-        <h1> Current Exchange Rate InputForm </h1>
+        <h1> Current Exchange Rates </h1>
         <form className="CurrentInputForm">
           <div className="baseName">
             <label>Enter the currency you have: </label>
