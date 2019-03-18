@@ -35,16 +35,6 @@ class HistoricalDataForm extends Component {
   //   event.preventDefault();
   //   let targetHistCode = this.state.convertCurrCode;
   //   console.log(targetHistCode);
-  //
-  //   console.log(historicalRates[targetHistCode]); //gives us the right object
-  //   // let chartInfo = Object.entries(historicalRates[targetHistCode]).forEach(
-  //   //   entry => {
-  //   //     console.log(entry);
-  //   //     let data = { entry };
-  //   //     console.log(data);
-  //   //   }
-  //   // );
-  // };
 
   createHistoricalOptions = () => {
     return codes.map(code => {
@@ -87,7 +77,7 @@ class HistoricalDataForm extends Component {
               className="button"
               onClick={this.handleHistoricalClickClear}
               type="submit"
-              value="Return to Currency Converter"
+              value="Return to Current Rate Converter"
             />
           </div>
         </form>

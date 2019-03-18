@@ -16,6 +16,7 @@ class CurrentDataContainer extends Component {
       historical: true
     });
   };
+
   showHistoricalForm = () => {
     if (this.state.historical === true) {
       return <HistoricalDataForm />;
@@ -28,13 +29,17 @@ class CurrentDataContainer extends Component {
     return (
       <div className="historicalDataButton">
         {this.showHistoricalForm()}
-        <input
-          className="button"
-          onClick={this.showHistorical}
-          type="submit"
-          value="View Historical Data"
-        />
-        <div className="CurrentDataContainer" />
+        {this.state.historical === false ? (
+          <input
+            className="button"
+            onClick={this.showHistorical}
+            type="submit"
+            value="View Historical Data"
+          />
+        ) : null}
+        <div className="CurrentDataContainer">
+          {<img src={background} className="background" alt="currency" />}
+        </div>
       </div>
     );
   }

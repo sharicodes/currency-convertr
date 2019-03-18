@@ -101,10 +101,6 @@ class CurrentInputForm extends Component {
   };
 
   render() {
-    //console.log(this.state);
-    //console.log(codes.filter(code => code.name === "Argentine Peso"));
-    //  console.log(codes);
-
     return (
       <div>
         <h1> Current Exchange Rates </h1>

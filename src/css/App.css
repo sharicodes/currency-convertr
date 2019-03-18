@@ -1,5 +1,13 @@
+/* Global Styles */
+@import url("https://fonts.googleapis.com/css?family=Amaranth");
+
+* {
+  font-family: "Amaranth", sans-serif;
+}
+
 .App {
   text-align: center;
+  color: #163913;
 }
 
 .App-header {
