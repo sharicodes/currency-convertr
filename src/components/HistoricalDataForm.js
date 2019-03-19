@@ -55,6 +55,7 @@ class HistoricalDataForm extends Component {
             <label>Enter the currency you have: </label>
             <input
               type="text"
+              className="button"
               name="usCurrName"
               data-id={this.usCurrName}
               defaultValue={this.state.usCurrName}
@@ -62,14 +63,16 @@ class HistoricalDataForm extends Component {
             />
           </div>
           <div className="desiredCurrName">
-            <label>Enter the currency you want:</label>
+            <label>Enter the currency you want: </label>
             <select
-              className="selection dropdown"
+              className="button"
               name="convertCurrCode"
               onChange={this.handleHistoricalSelectChange}
             >
               {this.createHistoricalOptions()}
             </select>
+            <br />
+            <br />
           </div>
 
           <div className="clearButton">

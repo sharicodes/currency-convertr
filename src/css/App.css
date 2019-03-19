@@ -50,6 +50,7 @@
 }
 .button {
   font-size: 15px;
+  color: #163913;
 }
 
 .loginbutton {
@@ -60,6 +61,18 @@
   margin-left: 1500px;
   padding: 5px 20px;
   border: 10px;
+}
+.signupbutton {
+  font-size: 10px;
+  letter-spacing: px;
+  height: auto;
+  width: auto;
+  margin-left: 1500px;
+  padding: 5px 20px;
+  border: 10px;
+}
+.HistoricalDataForm {
+  font-size: 20px;
 }
 .CurrentInputForm {
   font-size: 20px;
