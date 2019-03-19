@@ -110,6 +110,7 @@ class CurrentInputForm extends Component {
             <input
               type="text"
               name="baseCurrName"
+              className="button"
               data-id={this.baseCurrName}
               defaultValue={this.state.baseCurrName}
               onChange={this.handleChange}
@@ -119,15 +120,16 @@ class CurrentInputForm extends Component {
             <label>Enter the amount you want to exchange: </label>
             <input
               type="text"
+              className="button"
               name="baseCurrAmount"
               onChange={this.handleChange}
               //defaultValue={this.state.baseCurrAmount}
             />
           </div>
           <div className="desiredCurrName">
-            <label>Enter the currency you want:</label>
+            <label>Enter the currency you want: </label>
             <select
-              className="selection dropdown"
+              className="button"
               name="desiredCurrCode"
               onChange={this.handleSelectChange}
             >
@@ -142,6 +144,8 @@ class CurrentInputForm extends Component {
               type="submit"
               value="Convert!"
             />
+
+            <br />
           </div>
           <div className="clearButton">
             <input

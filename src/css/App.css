@@ -8,6 +8,10 @@
 .App {
   text-align: center;
   color: #163913;
+  margin-bottom: 10px;
+}
+#login {
+  align-items: right;
 }
 
 .App-header {
@@ -25,7 +29,7 @@
   display: flex;
   flex-direction: row;
 
-  align-items: left;
+  align-items: right;
   margin-bottom: 0px;
   background-image: url("../background2.jpg");
 }
@@ -43,7 +47,22 @@
   flex-direction: row;
 
   align-items: left;
-  margin-bottom: 0px;
+}
+.button {
+  font-size: 15px;
+}
+
+.loginbutton {
+  font-size: 10px;
+  letter-spacing: px;
+  height: auto;
+  width: auto;
+  margin-left: 1500px;
+  padding: 5px 20px;
+  border: 10px;
+}
+.CurrentInputForm {
+  font-size: 20px;
 }
 .CurrentInputForm {
 }

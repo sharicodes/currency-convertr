@@ -6,8 +6,8 @@ class CurrentResponse extends Component {
     return (
       <div>
         <div>
-          <h2> Exchange Rate: {this.props.exchangeRate} </h2>
-          <h2> Amount: {this.props.desiredCurrAmount}</h2>
+          <h3> Exchange Rate: {this.props.exchangeRate} </h3>
+          <h3> Amount: {this.props.desiredCurrAmount}</h3>
         </div>
       </div>
     );

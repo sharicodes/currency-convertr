@@ -1,5 +1,9 @@
 const codes = [
   {
+    code: "choose",
+    name: "choose currency"
+  },
+  {
     code: "USDARS",
     name: "Argentine Peso"
   },
