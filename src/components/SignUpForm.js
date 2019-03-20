@@ -25,7 +25,7 @@ class SignUpForm extends Component {
     fields["email"] = "";
     fields["password"] = "";
     this.setState({ fields: fields });
-    alert("Form submitted");
+    alert("Thanks for signing up!");
   };
 
   render() {
