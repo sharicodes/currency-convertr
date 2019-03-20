@@ -62,12 +62,9 @@ class CurrentInputForm extends Component {
     finalTotal = finalTotal.toFixed(2);
     //console.log(finalTotal);
 
-    this.setState({ desiredCurrAmount: finalTotal }, () => {
-      //console.log(this.state.desiredCurrAmount);
-    });
-
-    this.setState({ exchangeRate: rate }, () => {
-      //  console.log(this.state.exchangeRate);
+    this.setState({
+      desiredCurrAmount: finalTotal,
+      exchangeRate: rate
     });
   };
 
@@ -108,6 +105,7 @@ class CurrentInputForm extends Component {
             type="text"
             name="baseCurrName"
             value={this.state.baseCurrName}
+            onChange={this.handleChange}
           />
           <label> Enter the amount you want to exchange: </label>
           <input
