@@ -94,7 +94,7 @@ class CurrentInputForm extends Component {
   };
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <React.Fragment>
         <h1> Current Exchange Rates </h1>
