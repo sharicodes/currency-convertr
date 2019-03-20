@@ -5,6 +5,7 @@ import CurrentResponse from "./CurrentResponse";
 class CurrentInputForm extends Component {
   constructor() {
     super();
+
     this.state = {
       baseCurrCode: "USD",
       baseCurrName: "US Dollar",
@@ -61,32 +62,24 @@ class CurrentInputForm extends Component {
     finalTotal = finalTotal.toFixed(2);
     //console.log(finalTotal);
 
-    this.setState({ desiredCurrAmount: finalTotal }, () => {
-      //console.log(this.state.desiredCurrAmount);
-    });
-
-    this.setState({ exchangeRate: rate }, () => {
-      //  console.log(this.state.exchangeRate);
+    this.setState({
+      desiredCurrAmount: finalTotal,
+      exchangeRate: rate
     });
   };
-  handleClickClear = event => {
+
+  handleClickClear = () => {
     //  console.log(event.target.name, event.target.value);
-    this.setState({ desiredCurrAmount: 0 }, () => {
-      //console.log(this.state.desiredCurrAmount);
-    });
-
-    this.setState({ exchangeRate: 0 }, () => {
-      //  console.log(this.state.exchangeRate);
-    });
-    this.setState({ baseCurrAmount: 1 }, () => {
-      //  console.log(this.state.baseCurrAmount);
-    });
-
-    this.setState({ desiredCurrName: "" }, () => {
-      //  console.log(this.desiredCurrName);
-    });
-    this.setState({ desiredCurrCode: "" }, () => {
-      //  console.log(this.desiredCurrCode);
+    //this.setState = {};
+    //this.setState({});
+    this.setState({
+      baseCurrCode: "USD",
+      baseCurrName: "US Dollar",
+      baseCurrAmount: 1,
+      desiredCurrCode: "",
+      desiredCurrName: "",
+      exchangeRate: 0,
+      desiredCurrAmount: 0
     });
   };
 
@@ -101,6 +94,7 @@ class CurrentInputForm extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <React.Fragment>
         <h1> Current Exchange Rates </h1>
@@ -110,8 +104,7 @@ class CurrentInputForm extends Component {
             className="inputButton"
             type="text"
             name="baseCurrName"
-            data-id={this.baseCurrName}
-            defaultValue={this.state.baseCurrName}
+            value={this.state.baseCurrName}
             onChange={this.handleChange}
           />
           <label> Enter the amount you want to exchange: </label>
@@ -120,12 +113,13 @@ class CurrentInputForm extends Component {
             type="text"
             name="baseCurrAmount"
             onChange={this.handleChange}
-            //defaultValue={this.state.baseCurrAmount}
+            value={this.state.baseCurrAmount}
           />
           <label> Enter the currency you want: </label>
           <select
             className="inputButton"
             name="desiredCurrCode"
+            value={this.state.desiredCurrCode}
             onChange={this.handleSelectChange}
           >
             {this.createOptions()}
@@ -139,15 +133,15 @@ class CurrentInputForm extends Component {
               value="Convert!"
             />
             <br /> <br />
-            <input
-              className="button"
-              onClick={this.handleClickClear}
-              type="submit"
-              value="Clear request"
-            />
           </div>
         </form>
-
+        <button
+          className="button"
+          onClick={() => this.handleClickClear()}
+          value="Clear request"
+        >
+          Clear Request
+        </button>
         <CurrentResponse
           exchangeRate={this.state.exchangeRate}
           desiredCurrAmount={this.state.desiredCurrAmount}

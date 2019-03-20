@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
 import historicalRates from "./ChartDataTest";
-import ReactChartkick, { LineChart, AreaChart } from "react-chartkick";
+import ReactChartkick, { AreaChart } from "react-chartkick";
 import Chart from "chart.js";
 
 ReactChartkick.addAdapter(Chart);
