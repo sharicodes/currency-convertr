@@ -79,7 +79,7 @@ class CurrentInputForm extends Component {
       //  console.log(this.state.exchangeRate);
     });
     this.setState({ baseCurrAmount: 1 }, () => {
-      //  console.log(this.state.baseCurrAmount);
+      //console.log(this.state.baseCurrAmount);
     });
 
     this.setState({ desiredCurrName: "" }, () => {
@@ -120,7 +120,7 @@ class CurrentInputForm extends Component {
             type="text"
             name="baseCurrAmount"
             onChange={this.handleChange}
-            //defaultValue={this.state.baseCurrAmount}
+            defaultValue={this.state.baseCurrAmount}
           />
           <label> Enter the currency you want: </label>
           <select
@@ -139,15 +139,16 @@ class CurrentInputForm extends Component {
               value="Convert!"
             />
             <br /> <br />
-            <input
-              className="button"
-              onClick={this.handleClickClear}
-              type="submit"
-              value="Clear request"
-            />
           </div>
         </form>
-
+        <button
+          className="button"
+          onClick={this.handleClickClear}
+          value="Clear request"
+        >
+          {" "}
+          Clear Request
+        </button>
         <CurrentResponse
           exchangeRate={this.state.exchangeRate}
           desiredCurrAmount={this.state.desiredCurrAmount}
