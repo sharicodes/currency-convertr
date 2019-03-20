@@ -37,6 +37,8 @@ class CurrentDataContainer extends Component {
             value="View Historical Data"
           />
         ) : null}
+        <br />
+        <br />
         <div className="CurrentDataContainer">
           {<img src={background} className="background" alt="currency" />}
         </div>

@@ -102,48 +102,43 @@ class CurrentInputForm extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1> Current Exchange Rates </h1>
         <form className="CurrentInputForm">
-          <div className="baseName">
-            <label>Enter the currency you have: </label>
-            <input
-              type="text"
-              name="baseCurrName"
-              data-id={this.baseCurrName}
-              defaultValue={this.state.baseCurrName}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="baseAmount">
-            <label>Enter the amount you want to exchange: </label>
-            <input
-              type="text"
-              name="baseCurrAmount"
-              onChange={this.handleChange}
-              //defaultValue={this.state.baseCurrAmount}
-            />
-          </div>
-          <div className="desiredCurrName">
-            <label>Enter the currency you want:</label>
-            <select
-              className="selection dropdown"
-              name="desiredCurrCode"
-              onChange={this.handleSelectChange}
-            >
-              {this.createOptions()}
-            </select>
-          </div>
-
-          <div className="convertButton">
+          <label>Enter the currency you have: </label>
+          <input
+            className="inputButton"
+            type="text"
+            name="baseCurrName"
+            data-id={this.baseCurrName}
+            defaultValue={this.state.baseCurrName}
+            onChange={this.handleChange}
+          />
+          <label> Enter the amount you want to exchange: </label>
+          <input
+            className="inputButton"
+            type="text"
+            name="baseCurrAmount"
+            onChange={this.handleChange}
+            //defaultValue={this.state.baseCurrAmount}
+          />
+          <label> Enter the currency you want: </label>
+          <select
+            className="inputButton"
+            name="desiredCurrCode"
+            onChange={this.handleSelectChange}
+          >
+            {this.createOptions()}
+          </select>
+          <br /> <br />
+          <div>
             <input
               className="button"
               onClick={this.handleClick}
               type="submit"
               value="Convert!"
             />
-          </div>
-          <div className="clearButton">
+            <br /> <br />
             <input
               className="button"
               onClick={this.handleClickClear}
@@ -152,13 +147,12 @@ class CurrentInputForm extends Component {
             />
           </div>
         </form>
-        <div>
-          <CurrentResponse
-            exchangeRate={this.state.exchangeRate}
-            desiredCurrAmount={this.state.desiredCurrAmount}
-          />
-        </div>
-      </div>
+
+        <CurrentResponse
+          exchangeRate={this.state.exchangeRate}
+          desiredCurrAmount={this.state.desiredCurrAmount}
+        />
+      </React.Fragment>
     );
   }
 }

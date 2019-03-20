@@ -8,6 +8,7 @@
 .App {
   text-align: center;
   color: #163913;
+  margin-bottom: 10px;
 }
 
 .App-header {
@@ -29,6 +30,16 @@
   margin-bottom: 0px;
   background-image: url("../background2.jpg");
 }
+.button {
+  font-size: 15px;
+  color: #163913;
+}
+
+.inputButton {
+  font-size: 15px;
+  color: #163913;
+}
+
 .CurrentDataContainer {
   background-image: url("../background.jpg");
   border-radius: 0px;
@@ -41,9 +52,14 @@
 
   display: flex;
   flex-direction: row;
-
   align-items: left;
-  margin-bottom: 0px;
+}
+.HistoricalDataForm {
+  font-size: 20px;
 }
 .CurrentInputForm {
+  font-size: 20px;
+}
+.HistoricalInputForm {
+  font-size: 20px;
 }

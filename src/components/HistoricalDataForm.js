@@ -48,30 +48,27 @@ class HistoricalDataForm extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <h1> Historical Rates- 5 Year trend </h1>
         <form className="HistoricalInputForm">
-          <div className="usCurrName">
-            <label>Enter the currency you have: </label>
-            <input
-              type="text"
-              name="usCurrName"
-              data-id={this.usCurrName}
-              defaultValue={this.state.usCurrName}
-              onChange={this.handleHistoricalChange}
-            />
-          </div>
-          <div className="desiredCurrName">
-            <label>Enter the currency you want:</label>
-            <select
-              className="selection dropdown"
-              name="convertCurrCode"
-              onChange={this.handleHistoricalSelectChange}
-            >
-              {this.createHistoricalOptions()}
-            </select>
-          </div>
-
+          <label>Enter the currency you have: </label>
+          <input
+            className="button"
+            type="text"
+            name="usCurrName"
+            data-id={this.usCurrName}
+            defaultValue={this.state.usCurrName}
+            onChange={this.handleHistoricalChange}
+          />
+          <label> Enter the currency you want: </label>
+          <select
+            className="button"
+            name="convertCurrCode"
+            onChange={this.handleHistoricalSelectChange}
+          >
+            {this.createHistoricalOptions()}
+          </select>
+          <br /> <br />
           <div className="clearButton">
             <input
               className="button"
@@ -87,7 +84,7 @@ class HistoricalDataForm extends Component {
           ytitle="Rate"
           data={historicalRates[this.state.convertCurrCode]}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }
