@@ -39,6 +39,10 @@
   font-size: 15px;
   color: #163913;
 }
+.convertButton {
+  font-size: 22px;
+  color: #163913;
+}
 
 .CurrentDataContainer {
   background-image: url("../background.jpg");

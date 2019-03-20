@@ -133,7 +133,7 @@ class CurrentInputForm extends Component {
           <br /> <br />
           <div>
             <input
-              className="button"
+              className="convertButton"
               onClick={this.handleClick}
               type="submit"
               value="Convert!"
