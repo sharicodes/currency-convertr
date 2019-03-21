@@ -11,57 +11,53 @@ class LoginForm extends Component {
   }
 
   handleChange = e => {
-    e.preventDefault();
     this.setState({
       [e.target.name]: e.target.value
     });
   };
 
   handleSubmit = () => {
-    fetch("http://localhost:3001/api/v1/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accepts: "application/json"
-      },
-      body: JSON.stringify(this.state)
-    })
+    // console.log(this.state.email);
+    fetch(`http://localhost:3001/api/v1/users/id?email=${this.state.email}`)
       .then(res => res.json())
-      .then(response => {
-        this.setState(
-          {
-            currentUser: response
-          },
-          () => console.log(this.state.currentUser)
-        );
+      .then(user => {
+        console.log(user);
+        this.setState({
+          currentUser: user
+        });
       });
   };
 
   render() {
+    console.log(this.state);
+    console.log(this.state.currentUser);
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="button" />
+      <React.Fragment>
+        <form>
+          <div className="button" />
 
-        <input
-          type="text"
-          placeholder="enter your email"
-          name="email"
-          value={this.state.email}
-          onChange={this.handleChange}
-        />
-        <div className="button" />
+          <input
+            type="text"
+            placeholder="enter your email"
+            name="email"
+            value={this.state.email}
+            onChange={this.handleChange}
+          />
+          <div className="button" />
 
-        <input
-          type="password"
-          placeholder="enter your password"
-          name="password"
-          value={this.state.password}
-          onChange={this.handleChange}
-        />
+          <input
+            type="password"
+            placeholder="enter your password"
+            name="password"
+            value={this.state.password}
+            onChange={this.handleChange}
+          />
+        </form>
 
-        <div className="button" />
-        <button type="submit">click to complete Login</button>
-      </form>
+        <div className="button">
+          <button onClick={this.handleSubmit}>click to complete Login</button>
+        </div>
+      </React.Fragment>
     );
   }
 }
