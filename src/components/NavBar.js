@@ -35,6 +35,7 @@ class NavBar extends Component {
     }
   };
   render() {
+    console.log(this.props);
     return (
       <React.Fragment>
         <div className="NavBar">

@@ -9,7 +9,7 @@ class SignUpForm extends Component {
       email: "",
       password: "",
       passwordConfirmation: "",
-      user: {}
+      currentUser: {}
     };
   }
 
@@ -29,7 +29,14 @@ class SignUpForm extends Component {
       body: JSON.stringify(this.state)
     })
       .then(res => res.json())
-      .then(user => console.log(user));
+      .then(response => {
+        this.setState(
+          {
+            currentUser: response
+          },
+          () => console.log(this.state.currentUser)
+        );
+      });
   };
 
   handleSubmit = event => {
@@ -43,54 +50,52 @@ class SignUpForm extends Component {
 
   render() {
     return (
-      <div id="signup form">
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            placeholder="enter your first name"
-            name="first_name"
-            value={this.state.first_name}
-            onChange={this.handleChange}
-          />
-          <div className="button" />
+      <form onSubmit={this.handleSubmit}>
+        <input
+          type="text"
+          placeholder="enter your first name"
+          name="first_name"
+          value={this.state.first_name}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
 
-          <input
-            type="text"
-            placeholder="enter your last name"
-            name="last_name"
-            value={this.state.last_name}
-            onChange={this.handleChange}
-          />
-          <div className="button" />
+        <input
+          type="text"
+          placeholder="enter your last name"
+          name="last_name"
+          value={this.state.last_name}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
 
-          <input
-            type="text"
-            placeholder="enter your email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleChange}
-          />
-          <div className="button" />
+        <input
+          type="text"
+          placeholder="enter your email"
+          name="email"
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
 
-          <input
-            type="password"
-            placeholder="enter a password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleChange}
-          />
-          <div className="button" />
-          <input
-            type="password"
-            placeholder="re-enter the password"
-            name="passwordConfirmation"
-            value={this.state.passwordConfirmation}
-            onChange={this.handleChange}
-          />
-          <div className="button" />
-          <button type="submit">click to complete Sign Up</button>
-        </form>
-      </div>
+        <input
+          type="password"
+          placeholder="enter a password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
+        <input
+          type="password"
+          placeholder="re-enter the password"
+          name="passwordConfirmation"
+          value={this.state.passwordConfirmation}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
+        <button type="submit">click to complete Sign Up</button>
+      </form>
     );
   }
 }

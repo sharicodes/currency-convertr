@@ -4,59 +4,64 @@ class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
-      fields: {}
+      email: "",
+      password: "",
+      currentUser: {}
     };
   }
 
   handleChange = e => {
-    let fields = this.state.fields;
-    fields[e.target.name] = e.target.value;
+    e.preventDefault();
     this.setState({
-      fields
+      [e.target.name]: e.target.value
     });
   };
 
-  submitloginForm = e => {
-    e.preventDefault();
-
-    let fields = {};
-    fields["password"] = "";
-    this.setState({ fields: fields });
-    alert("Welcome back!");
+  handleSubmit = () => {
+    fetch("http://localhost:3001/api/v1/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accepts: "application/json"
+      },
+      body: JSON.stringify(this.state)
+    })
+      .then(res => res.json())
+      .then(response => {
+        this.setState(
+          {
+            currentUser: response
+          },
+          () => console.log(this.state.currentUser)
+        );
+      });
   };
 
   render() {
     return (
-      <div id="login form">
-        <div id="login">
-          <form method="post" name="loginForm" onSubmit={this.submitloginForm}>
-            <div className="button" />
+      <form onSubmit={this.handleSubmit}>
+        <div className="button" />
 
-            <input
-              type="text"
-              name="email"
-              placeholder="enter email"
-              value={this.state.fields.email}
-              onChange={this.handleChange}
-            />
-            <div className="button" />
+        <input
+          type="text"
+          placeholder="enter your email"
+          name="email"
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
+        <div className="button" />
 
-            <input
-              type="password"
-              name="password"
-              placeholder="enter password"
-              value={this.state.fields.password}
-              onChange={this.handleChange}
-            />
-            <div className="button" />
-            <input
-              type="submit"
-              className="button"
-              value="click to complete Log In"
-            />
-          </form>
-        </div>
-      </div>
+        <input
+          type="password"
+          placeholder="enter your password"
+          name="password"
+          value={this.state.password}
+          onChange={this.handleChange}
+        />
+
+        <div className="button" />
+        <button type="submit">click to complete Login</button>
+      </form>
     );
   }
 }
