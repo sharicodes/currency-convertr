@@ -11,6 +11,7 @@ class NavBar extends Component {
       signup: false
     };
   }
+  findCurrUser = () => {};
 
   handleLogin = () => {
     this.setState({
