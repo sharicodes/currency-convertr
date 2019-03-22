@@ -29,8 +29,8 @@ class LoginForm extends Component {
   };
 
   render() {
-    console.log(this.state);
-    console.log(this.state.currentUser);
+    // console.log(this.state);
+    // console.log(this.state.currentUser);
     return (
       <React.Fragment>
         <form>
