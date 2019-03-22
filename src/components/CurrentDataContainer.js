@@ -14,7 +14,7 @@ class CurrentDataContainer extends Component {
       signup: false
     };
   }
-  //findCurrUser = () => {};
+
   // showSignUpForm = () => {
   //   if (this.state.signup === true) {
   //     return <SignUpForm />;
@@ -22,6 +22,7 @@ class CurrentDataContainer extends Component {
   //     return <CurrentInputForm />;
   //   }
   // };
+  findCurrUser = () => {};
   handleLogin = () => {
     this.setState({
       login: true
@@ -42,6 +43,8 @@ class CurrentDataContainer extends Component {
   showSignUpForm = () => {
     if (this.state.signup === true) {
       return <SignUpForm />;
+    } else if (this.state.signup === false && this.state.login === false) {
+      return <CurrentInputForm />;
     }
   };
 
@@ -54,8 +57,8 @@ class CurrentDataContainer extends Component {
   showHistoricalForm = () => {
     if (this.state.historical === true) {
       return <HistoricalDataForm />;
-    } else if (this.state.historical === false) {
-      return <CurrentInputForm />;
+      // } else if (this.state.historical === false) {
+      //   return <CurrentInputForm />;
     }
   };
 
