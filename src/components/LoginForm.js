@@ -26,11 +26,15 @@ class LoginForm extends Component {
           currentUser: user
         });
       });
+    this.setState({
+      email: "",
+      password: ""
+    });
   };
 
   render() {
     // console.log(this.state);
-    // console.log(this.state.currentUser);
+    console.log(this.state.currentUser);
     return (
       <React.Fragment>
         <form>

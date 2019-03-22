@@ -14,8 +14,14 @@ class CurrentDataContainer extends Component {
       signup: false
     };
   }
-  findCurrUser = () => {};
-
+  //findCurrUser = () => {};
+  // showSignUpForm = () => {
+  //   if (this.state.signup === true) {
+  //     return <SignUpForm />;
+  //   } else if (this.state.signup === false && this.state.login === false) {
+  //     return <CurrentInputForm />;
+  //   }
+  // };
   handleLogin = () => {
     this.setState({
       login: true
