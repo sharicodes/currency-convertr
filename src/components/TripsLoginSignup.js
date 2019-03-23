@@ -46,22 +46,19 @@ class TripsLoginSignup extends Component {
         <input
           className="loginButton"
           onClick={this.handleLogin}
-          type="submit"
           value="Log In"
         />
         {this.showSignupForm()}
         <input
           className="signupbutton"
           onClick={this.handleSignUp}
-          type="submit"
           value="Sign Up"
         />
 
         <input
           className="button"
-          onClick={() => this.props.returnToCurrent()}
-          type="submit"
-          value="Return to Current Exchange Rates"
+          onClick={this.props.showCurrent()}
+          value="Return to Current Rate Converter"
         />
       </React.Fragment>
     );

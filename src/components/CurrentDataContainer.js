@@ -9,7 +9,8 @@ class CurrentDataContainer extends Component {
     super(props);
     this.state = {
       historical: false,
-      trips: false
+      trips: false,
+      current: true
     };
   }
 
@@ -21,6 +22,11 @@ class CurrentDataContainer extends Component {
   showTrips = () => {
     this.setState({
       trips: true
+    });
+  };
+  showCurrent = () => {
+    this.setState({
+      edit: true
     });
   };
 
@@ -62,6 +68,7 @@ class CurrentDataContainer extends Component {
         <div className="CurrentDataContainer">
           {<img src={background} className="background" alt="currency" />}
         </div>
+        <TripsLoginSignup showCurrent={this.showCurrent} />
       </div>
     );
   }
