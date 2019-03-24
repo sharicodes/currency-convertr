@@ -10,9 +10,14 @@ class CurrentDataContainer extends Component {
     this.state = {
       historical: false,
       trips: false,
-      current: true
+      clear: false
     };
   }
+  handleClickClear = () => {
+    this.setState({
+      clear: true
+    });
+  };
 
   showHistorical = () => {
     this.setState({
@@ -24,11 +29,14 @@ class CurrentDataContainer extends Component {
       trips: true
     });
   };
-  showCurrent = () => {
-    this.setState({
-      edit: true
-    });
-  };
+  //
+  // clearTrips = () => {
+  //   if (this.state.clear === true) {
+  //     return <CurrentInputForm />;
+  //   } else {
+  //     null;
+  //   }
+  // };
 
   showHistoricalForm = () => {
     if (this.state.historical === true) {

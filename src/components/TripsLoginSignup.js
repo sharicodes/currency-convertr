@@ -20,23 +20,17 @@ class TripsLoginSignup extends Component {
   };
 
   showLoginForm = () => {
-    if (this.state.login === true) {
-      return <LoginForm />;
-    } else {
-      return null;
-    }
-  };
-
-  handleSignup = () => {
-    this.setState({
-      signup: true
-    });
+    if (this.state.login === true) return <LoginForm />;
   };
 
   showSignupForm = () => {
-    if (this.state.signup === true) {
-      return <SignUpForm />;
-    }
+    if (this.state.signup === true) return <SignUpForm />;
+  };
+
+  handleSignUp = () => {
+    this.setState({
+      signup: true
+    });
   };
 
   render() {
@@ -54,12 +48,14 @@ class TripsLoginSignup extends Component {
           onClick={this.handleSignUp}
           value="Sign Up"
         />
-
-        <input
-          className="button"
-          onClick={this.props.showCurrent()}
-          value="Return to Current Rate Converter"
-        />
+        <div className="clearButton">
+          <input
+            className="button"
+            onClick={() => this.handleClickClear}
+            type="submit"
+            value="Return to Current Rate Converter"
+          />
+        </div>
       </React.Fragment>
     );
   }
