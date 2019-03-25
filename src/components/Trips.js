@@ -95,6 +95,15 @@ class Trips extends Component {
       <React.Fragment>
         <h1> Track Exchange Rates for your trip! </h1>
         <form className="CurrentInputForm">
+          <label>Enter a name for your trip </label>
+          <input
+            className="inputButton"
+            type="text"
+            name="tripName"
+            value={this.state.tripName}
+            onChange={this.handleChange}
+          />
+          <br />
           <label>Enter the currency you have: </label>
           <input
             className="inputButton"
