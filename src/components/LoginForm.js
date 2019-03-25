@@ -27,6 +27,15 @@ class LoginForm extends Component {
         });
       });
   };
+  handleClickClear = () => {
+    //  console.log(event.target.name, event.target.value);
+    //this.setState = {};
+    //this.setState({});
+    this.setState({
+      email: "",
+      password: ""
+    });
+  };
 
   render() {
     console.log(this.state);
@@ -56,6 +65,15 @@ class LoginForm extends Component {
 
         <div className="button">
           <button onClick={this.handleSubmit}>click to complete Login</button>
+        </div>
+        <div className="button">
+          <button
+            className="button"
+            onClick={() => this.handleClickClear()}
+            value="Clear request"
+          >
+            Clear Request
+          </button>
         </div>
       </React.Fragment>
     );
