@@ -93,9 +93,6 @@ class Trips extends Component {
   };
 
   handleClickClear = () => {
-    //  console.log(event.target.name, event.target.value);
-    //this.setState = {};
-    //this.setState({});
     this.setState({
       tripName: "",
       baseCurrCode: "USD",
