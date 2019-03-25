@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Trips from "./Trips";
 class LoginForm extends Component {
   constructor() {
     super();
@@ -14,6 +14,10 @@ class LoginForm extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  };
+
+  loggedIn = currentUser => {
+    return <Trips />;
   };
 
   handleSubmit = () => {
@@ -57,6 +61,7 @@ class LoginForm extends Component {
         <div className="button">
           <button onClick={this.handleSubmit}>click to complete Login</button>
         </div>
+        {this.loggedIn()}
       </React.Fragment>
     );
   }

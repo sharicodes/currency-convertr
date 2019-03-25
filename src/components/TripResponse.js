@@ -1,0 +1,17 @@
+mport React, { Component } from "react";
+
+class TripResponse extends Component {
+  render() {
+    //console.log(this.props);
+    return (
+      <div>
+        <div>
+          <h2> Exchange Rate: {this.props.exchangeRate} </h2>
+          <h2> Amount in currency: {this.props.desiredCurrAmount}</h2>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default TripResponse;
