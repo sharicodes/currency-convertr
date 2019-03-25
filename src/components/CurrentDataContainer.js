@@ -1,15 +1,28 @@
 import React, { Component } from "react";
 import CurrentInputForm from "./CurrentInputForm";
 import HistoricalDataForm from "./HistoricalDataForm";
+import Trips from "./Trips";
 import background from "../background.jpg";
 
 class CurrentDataContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      historical: false
+      historical: false,
+      trips: false,
+      clear: false
     };
   }
+  handleClickClear = () => {
+    this.setState({
+      clear: true
+    });
+  };
+  showTrips = () => {
+    this.setState({
+      trips: true
+    });
+  };
 
   showHistorical = () => {
     this.setState({
@@ -20,10 +33,19 @@ class CurrentDataContainer extends Component {
   showHistoricalForm = () => {
     if (this.state.historical === true) {
       return <HistoricalDataForm />;
-    } else if (this.state.historical === false) {
+    } else if (this.state.historical === false && this.state.trips === false) {
       return <CurrentInputForm />;
+    } else if (this.state.trips === true) {
+      return <Trips />;
     }
   };
+  // clearTrips = () => {
+  //   if (this.state.clear === true) {
+  //     return <CurrentInputForm />;
+  //   } else {
+  //     null;
+  //   }
+  // };
 
   render() {
     return (
@@ -37,11 +59,22 @@ class CurrentDataContainer extends Component {
             value="View Historical Data"
           />
         ) : null}
+        <div className="tripsButton" />
+
+        {this.state.trips === false ? (
+          <input
+            className="button"
+            onClick={this.showTrips}
+            type="submit"
+            value="Planning a Trip?"
+          />
+        ) : null}
         <br />
         <br />
         <div className="CurrentDataContainer">
           {<img src={background} className="background" alt="currency" />}
         </div>
+        <Trips showCurrent={this.showCurrent} />
       </div>
     );
   }
