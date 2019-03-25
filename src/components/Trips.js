@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import codes from "./CodeData";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
-import TripResponse from "./TripResponse";
+import TripsResponse from "./TripsResponse.js";
 
 class Trips extends Component {
   constructor() {
@@ -87,11 +87,11 @@ class Trips extends Component {
 
     this.setState({
       desiredCurrAmountOne: finalTotalOne,
-      desiredCurrAmountTwo: finalTotalOne,
-      desiredCurrAmountThree: finalTotalOne,
+      desiredCurrAmountTwo: finalTotalTwo,
+      desiredCurrAmountThree: finalTotalThree,
       exchangeRateOne: rateOne,
-      exchangeRateTwo: rateOne,
-      exchangeRateThree: rateOne
+      exchangeRateTwo: rateTwo,
+      exchangeRateThree: rateThree
     });
   };
 
@@ -162,7 +162,7 @@ class Trips extends Component {
           <label> Enter the currency you want for Currency #1: </label>
           <select
             className="inputButton"
-            name="desiredCurrCode"
+            name="desiredCurrCodeOne"
             value={this.state.desiredCurrCodeOne}
             onChange={this.handleSelectChange}
           >
@@ -183,7 +183,7 @@ class Trips extends Component {
           <label> Enter the currency you want for Currency #2: </label>
           <select
             className="inputButton"
-            name="desiredCurrCode"
+            name="desiredCurrCodeTwo"
             value={this.state.desiredCurrCodeTwo}
             onChange={this.handleSelectChange}
           >
@@ -204,7 +204,7 @@ class Trips extends Component {
           <label> Enter the currency you want for Currency #3: </label>
           <select
             className="inputButton"
-            name="desiredCurrCode"
+            name="desiredCurrCodeThree"
             value={this.state.desiredCurrCodeThree}
             onChange={this.handleSelectChange}
           >

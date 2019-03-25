@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Trips from "./Trips";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 

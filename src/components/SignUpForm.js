@@ -19,6 +19,10 @@ class SignUpForm extends Component {
     });
   };
 
+  signedIn = currentUser => {
+    return <TripsLoginSignup />;
+  };
+
   createUser = () => {
     fetch("http://localhost:3001/api/v1/users", {
       method: "POST",

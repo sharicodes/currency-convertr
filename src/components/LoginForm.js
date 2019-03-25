@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Trips from "./Trips";
+
 class LoginForm extends Component {
   constructor() {
     super();
@@ -17,7 +17,7 @@ class LoginForm extends Component {
   };
 
   loggedIn = currentUser => {
-    return <Trips />;
+    return <TripsLoginSignup />;
   };
 
   handleSubmit = () => {
