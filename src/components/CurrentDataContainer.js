@@ -10,7 +10,9 @@ class CurrentDataContainer extends Component {
     this.state = {
       historical: false,
       trips: false,
-      clear: false
+      clear: false,
+      showTripsButton: true,
+      showHistoricalButton: true
     };
   }
   handleClickClear = () => {
@@ -39,6 +41,17 @@ class CurrentDataContainer extends Component {
       return <Trips />;
     }
   };
+
+  // toggleTripsButton = () => {
+  //   if (this.state.showTripsButton === true){
+  //     this.setState = ({
+  //       showTripsButton: false
+  //     })
+  //   } else {
+  //   this.setState = ({
+  //     showTripsButton: true
+  //   });
+
   // clearTrips = () => {
   //   if (this.state.clear === true) {
   //     return <CurrentInputForm />;
@@ -51,7 +64,8 @@ class CurrentDataContainer extends Component {
     return (
       <div className="historicalDataButton">
         {this.showHistoricalForm()}
-        {this.state.historical === false ? (
+
+        {this.state.historical === false && this.state.trips == false ? (
           <input
             className="button"
             onClick={this.showHistorical}
@@ -61,7 +75,7 @@ class CurrentDataContainer extends Component {
         ) : null}
         <div className="tripsButton" />
 
-        {this.state.trips === false ? (
+        {this.state.trips === false && this.state.historical === false ? (
           <input
             className="button"
             onClick={this.showTrips}
@@ -69,12 +83,13 @@ class CurrentDataContainer extends Component {
             value="Planning a Trip?"
           />
         ) : null}
+
         <br />
         <br />
         <div className="CurrentDataContainer">
           {<img src={background} className="background" alt="currency" />}
         </div>
-        <Trips showCurrent={this.showCurrent} />
+        <Trips />
       </div>
     );
   }

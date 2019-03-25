@@ -1,30 +1,19 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
-import TripResponse from "./TripResponse";
+import CurrentResponse from "./CurrentResponse";
 
 class Trips extends Component {
   constructor() {
     super();
 
     this.state = {
-      tripName: "",
       baseCurrCode: "USD",
       baseCurrName: "US Dollar",
-      baseCurrAmountOne: 1,
-      baseCurrAmountTwo: 1,
-      baseCurrAmountThree: 1,
-      desiredCurrCodeOne: "",
-      desiredCurrCodeTwo: "",
-      desiredCurrCodeThree: "",
-      desiredCurrNameOne: "",
-      desiredCurrNameTwo: "",
-      desiredCurrNameThree: "",
-      exchangeRateOne: 0,
-      exchangeRateTwo: 0,
-      exchangeRateThree: 0,
-      desiredCurrAmountOne: 0,
-      desiredCurrAmountTwo: 0,
-      desiredCurrAmountThree: 0,
+      baseCurrAmount: 1,
+      desiredCurrCode: "",
+      desiredCurrName: "",
+      exchangeRate: 0,
+      desiredCurrAmount: 0,
       rates: {}
     };
   }
@@ -61,34 +50,20 @@ class Trips extends Component {
   handleClick = event => {
     //console.log(this.state.desiredCurrCode);
     event.preventDefault();
-    let targetCodeOne = this.state.desiredCurrCodeOne;
-    let targetCodeTwo = this.state.desiredCurrCodeTwo;
-    let targetCodeThree = this.state.desiredCurrCodeThree;
+    let targetCode = this.state.desiredCurrCode;
     //  console.log(targetCode);
-    let rateOne = this.state.rates[targetCodeOne];
-    let rateTwo = this.state.rates[targetCodeTwo];
-    let rateThree = this.state.rates[targetCodeThree];
+    let rate = this.state.rates[targetCode];
     // console.log(rate);
     // console.log(this.state.baseCurrAmount);
-    let amountOne = this.state.baseCurrAmountOne;
-    let amountTwo = this.state.baseCurrAmountTwo;
-    let amountThree = this.state.baseCurrAmountThree;
+    let amount = this.state.baseCurrAmount;
     //console.log(amount);
-    let finalTotalOne = rateOne * amountOne;
-    finalTotalOne = finalTotalOne.toFixed(2);
-    let finalTotalTwo = rateTwo * amountTwo;
-    finalTotalTwo = finalTotalTwo.toFixed(2);
-    let finalTotalThree = rateThree * amountThree;
-    finalTotalThree = finalTotalThree.toFixed(2);
+    let finalTotal = rate * amount;
+    finalTotal = finalTotal.toFixed(2);
     //console.log(finalTotal);
 
     this.setState({
-      desiredCurrAmountOne: finalTotalOne,
-      desiredCurrAmountTwo: finalTotalTwo,
-      desiredCurrAmountThree: finalTotalThree,
-      exchangeRateOne: rateOne,
-      exchangeRateTwo: rateTwo,
-      exchangeRateThree: rateThree
+      desiredCurrAmount: finalTotal,
+      exchangeRate: rate
     });
   };
 
@@ -97,21 +72,11 @@ class Trips extends Component {
       tripName: "",
       baseCurrCode: "USD",
       baseCurrName: "US Dollar",
-      baseCurrAmountOne: 1,
-      baseCurrAmountTwo: 1,
-      baseCurrAmountThree: 1,
-      desiredCurrCodeOne: "",
-      desiredCurrCodeTwo: "",
-      desiredCurrCodeThree: "",
-      desiredCurrNameOne: "",
-      desiredCurrNameTwo: "",
-      desiredCurrNameThree: "",
-      exchangeRateOne: 0,
-      exchangeRateTwo: 0,
-      exchangeRateThree: 0,
-      desiredCurrAmountOne: 0,
-      desiredCurrAmountTwo: 0,
-      desiredCurrAmountThree: 0
+      baseCurrAmount: 1,
+      desiredCurrCode: "",
+      desiredCurrName: "",
+      exchangeRate: 0,
+      desiredCurrAmount: 0
     });
   };
 
@@ -129,76 +94,28 @@ class Trips extends Component {
     return (
       <React.Fragment>
         <h1> Track Exchange Rates for your trip! </h1>
-        <h3> Enter up to 3 currencies </h3>
-
         <form className="CurrentInputForm">
-          <label>Base Currency: </label>
+          <label>Enter the currency you have: </label>
           <input
             className="inputButton"
             type="text"
-            name="baseCurrNameOne"
+            name="baseCurrName"
             value={this.state.baseCurrName}
             onChange={this.handleChange}
           />
-          <br />
-          <label>
-            {" "}
-            Enter the amount you want to exchange for Currency #1:{" "}
-          </label>
+          <label> Enter the amount you want to exchange: </label>
           <input
             className="inputButton"
             type="text"
-            name="baseCurrAmountOne"
+            name="baseCurrAmount"
             onChange={this.handleChange}
-            value={this.state.baseCurrAmountOne}
+            value={this.state.baseCurrAmount}
           />
-          <label> Enter the currency you want for Currency #1: </label>
+          <label> Enter the currency you want: </label>
           <select
             className="inputButton"
-            name="desiredCurrCodeOne"
-            value={this.state.desiredCurrCodeOne}
-            onChange={this.handleSelectChange}
-          >
-            {this.createOptions()}
-          </select>
-          <br />
-          <label>
-            {" "}
-            Enter the amount you want to exchange for Currency #2:{" "}
-          </label>
-          <input
-            className="inputButton"
-            type="text"
-            name="baseCurrAmountTwo"
-            onChange={this.handleChange}
-            value={this.state.baseCurrAmountTwo}
-          />
-          <label> Enter the currency you want for Currency #2: </label>
-          <select
-            className="inputButton"
-            name="desiredCurrCodeTwo"
-            value={this.state.desiredCurrCodeTwo}
-            onChange={this.handleSelectChange}
-          >
-            {this.createOptions()}
-          </select>
-          <br />
-          <label>
-            {" "}
-            Enter the amount you want to exchange for Currency #3:{" "}
-          </label>
-          <input
-            className="inputButton"
-            type="text"
-            name="baseCurrAmountThree"
-            onChange={this.handleChange}
-            value={this.state.baseCurrAmountThree}
-          />
-          <label> Enter the currency you want for Currency #3: </label>
-          <select
-            className="inputButton"
-            name="desiredCurrCodeThree"
-            value={this.state.desiredCurrCodeThree}
+            name="desiredCurrCode"
+            value={this.state.desiredCurrCode}
             onChange={this.handleSelectChange}
           >
             {this.createOptions()}
@@ -213,6 +130,14 @@ class Trips extends Component {
             />
             <br /> <br />
           </div>
+          <div className="clearButton">
+            <input
+              className="button"
+              onClick={this.handleHistoricalClickClear}
+              type="submit"
+              value="Return to Current Rate Converter"
+            />
+          </div>
         </form>
         <button
           className="button"
@@ -221,13 +146,9 @@ class Trips extends Component {
         >
           Clear Request
         </button>
-        <TripResponse
-          exchangeRateOne={this.state.exchangeRateOne}
-          exchangeRateTwo={this.state.exchangeRateTwo}
-          exchangeRateThree={this.state.exchangeRateThree}
-          desiredCurrAmountOne={this.state.desiredCurrAmountOne}
-          desiredCurrAmountTwo={this.state.desiredCurrAmountTwo}
-          desiredCurrAmountThree={this.state.desiredCurrAmountThree}
+        <CurrentResponse
+          exchangeRate={this.state.exchangeRate}
+          desiredCurrAmount={this.state.desiredCurrAmount}
         />
       </React.Fragment>
     );
