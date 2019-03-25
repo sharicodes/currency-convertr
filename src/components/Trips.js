@@ -79,6 +79,10 @@ class Trips extends Component {
       desiredCurrAmount: 0
     });
   };
+  handleAddCurrencies = event => {
+    event.preventDefault();
+    return <CurrentResponse />;
+  };
 
   createOptions = () => {
     return codes.map(code => {
@@ -103,6 +107,7 @@ class Trips extends Component {
             value={this.state.tripName}
             onChange={this.handleChange}
           />
+          <br />
           <br />
           <label>Enter the currency you have: </label>
           <input
@@ -139,6 +144,21 @@ class Trips extends Component {
             />
             <br /> <br />
           </div>
+          <button
+            className="button"
+            onClick={() => this.handleClickClear()}
+            value="Clear request"
+          >
+            Clear Request
+          </button>
+          <CurrentResponse
+            exchangeRate={this.state.exchangeRate}
+            desiredCurrAmount={this.state.desiredCurrAmount}
+          />
+          <button className="button" onClick={this.handleAddCurrencies}>
+            Add additional currencies to your trip
+          </button>
+          <br /> <br />
           <div className="clearButton">
             <input
               className="button"
@@ -148,17 +168,6 @@ class Trips extends Component {
             />
           </div>
         </form>
-        <button
-          className="button"
-          onClick={() => this.handleClickClear()}
-          value="Clear request"
-        >
-          Clear Request
-        </button>
-        <CurrentResponse
-          exchangeRate={this.state.exchangeRate}
-          desiredCurrAmount={this.state.desiredCurrAmount}
-        />
       </React.Fragment>
     );
   }

@@ -65,7 +65,7 @@ class CurrentDataContainer extends Component {
       <div className="historicalDataButton">
         {this.showHistoricalForm()}
 
-        {this.state.historical === false && this.state.trips == false ? (
+        {this.state.historical === false && this.state.trips === false ? (
           <input
             className="button"
             onClick={this.showHistorical}
