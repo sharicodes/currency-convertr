@@ -137,8 +137,16 @@ class Trips extends Component {
     console.log(this.state);
     return (
       <React.Fragment>
-        <h1> Track Exchange Rates for your trip! </h1>
         <form className="CurrentInputForm">
+          <div className="clearButton">
+            <input
+              className="button"
+              onClick={this.handleHistoricalClickClear}
+              type="submit"
+              value="Return to Current Rate Converter"
+            />
+          </div>
+          <h1> Track Exchange Rates for your trip! </h1>
           <label>Enter a name for your trip </label>
           <input
             className="inputButton"
@@ -184,33 +192,28 @@ class Trips extends Component {
             />
             <br /> <br />
           </div>
-          <button
-            className="button"
-            onClick={() => this.handleClickClear()}
-            value="Clear request"
-          >
-            Clear Request
-          </button>
           <CurrentResponse
             exchangeRate={this.state.exchangeRate}
             desiredCurrAmount={this.state.desiredCurrAmount}
           />
-          <br /> <br />
-          <div className="clearButton">
-            <input
-              className="button"
-              onClick={this.handleHistoricalClickClear}
-              type="submit"
-              value="Return to Current Rate Converter"
-            />
-          </div>
         </form>
+
+        <button
+          className="button"
+          onClick={() => this.handleClickClear()}
+          value="Clear request"
+        >
+          Clear Request
+        </button>
+        <br />
         {this.renderCurrencyConverters()}
         <br />
         <button className="button" onClick={this.handleAddCurrencies}>
           Add additional currencies to your trip
         </button>
-        <br /> <br />
+
+        <br />
+        <br />
         <button className="button" onClick={this.handleSaveTrip}>
           Save this trip
         </button>
