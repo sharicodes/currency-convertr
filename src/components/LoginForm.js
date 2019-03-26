@@ -6,7 +6,8 @@ class LoginForm extends Component {
     this.state = {
       email: "",
       password: "",
-      currentUser: {}
+      currentUser: {},
+      loggedIn: false
     };
   }
 
@@ -23,7 +24,8 @@ class LoginForm extends Component {
       .then(user => {
         console.log(user);
         this.setState({
-          currentUser: user
+          currentUser: user,
+          loggedIn: true
         });
       });
   };

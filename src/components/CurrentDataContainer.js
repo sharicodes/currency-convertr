@@ -42,24 +42,6 @@ class CurrentDataContainer extends Component {
     }
   };
 
-  // toggleTripsButton = () => {
-  //   if (this.state.showTripsButton === true){
-  //     this.setState = ({
-  //       showTripsButton: false
-  //     })
-  //   } else {
-  //   this.setState = ({
-  //     showTripsButton: true
-  //   });
-
-  // clearTrips = () => {
-  //   if (this.state.clear === true) {
-  //     return <CurrentInputForm />;
-  //   } else {
-  //     null;
-  //   }
-  // };
-
   render() {
     return (
       <div className="historicalDataButton">

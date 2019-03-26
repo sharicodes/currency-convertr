@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import codes from "./CodeData";
 import CurrentResponse from "./CurrentResponse";
 import CurrentInputForm from "./CurrentInputForm";
+import SaveTrip from "./SaveTrip";
 
 class Trips extends Component {
   constructor() {
@@ -16,7 +17,8 @@ class Trips extends Component {
       exchangeRate: 0,
       desiredCurrAmount: 0,
       rates: {},
-      converterCount: []
+      converterCount: [],
+      save: false
     };
   }
   componentDidMount() {
@@ -35,7 +37,18 @@ class Trips extends Component {
         });
       });
   }
+  handleSaveTrip = () => {
+    //console.log("here");
+    this.setState({
+      save: true
+    });
+  };
 
+  showSave = () => {
+    if (this.state.save === true) {
+      return <SaveTrip />;
+    }
+  };
   handleChange = event => {
     //  console.log(event.target.name, event.target.value);
     this.setState({
@@ -98,7 +111,7 @@ class Trips extends Component {
   };
 
   renderCurrencyConverters = () => {
-    console.log(this.state.converterCount);
+    //  console.log(this.state.converterCount);
     // let i = 0;
     // while (i < this.state.converterCount) {
     //   console.log(`running ${this.state.converterCount} times`);
@@ -183,19 +196,25 @@ class Trips extends Component {
             desiredCurrAmount={this.state.desiredCurrAmount}
           />
           <br /> <br />
+          <div className="clearButton">
+            <input
+              className="button"
+              onClick={this.handleHistoricalClickClear}
+              type="submit"
+              value="Return to Current Rate Converter"
+            />
+          </div>
         </form>
         {this.renderCurrencyConverters()}
-        <div className="clearButton">
-          <input
-            className="button"
-            onClick={this.handleHistoricalClickClear}
-            type="submit"
-            value="Return to Current Rate Converter"
-          />
-        </div>
+        <br />
         <button className="button" onClick={this.handleAddCurrencies}>
           Add additional currencies to your trip
         </button>
+        <br /> <br />
+        <button className="button" onClick={this.handleSaveTrip}>
+          Save this trip
+        </button>
+        {this.showSave()}
       </React.Fragment>
     );
   }
