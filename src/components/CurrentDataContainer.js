@@ -89,7 +89,6 @@ class CurrentDataContainer extends Component {
         <div className="CurrentDataContainer">
           {<img src={background} className="background" alt="currency" />}
         </div>
-        <Trips />
       </div>
     );
   }

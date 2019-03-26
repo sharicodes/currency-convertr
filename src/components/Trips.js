@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import codes from "./CodeData";
 import CurrentResponse from "./CurrentResponse";
+import CurrentInputForm from "./CurrentInputForm";
 
 class Trips extends Component {
   constructor() {
@@ -14,7 +15,8 @@ class Trips extends Component {
       desiredCurrName: "",
       exchangeRate: 0,
       desiredCurrAmount: 0,
-      rates: {}
+      rates: {},
+      converterCount: []
     };
   }
   componentDidMount() {
@@ -79,9 +81,33 @@ class Trips extends Component {
       desiredCurrAmount: 0
     });
   };
-  handleAddCurrencies = event => {
-    event.preventDefault();
-    return <CurrentResponse />;
+
+  handleAddCurrencies = () => {
+    // event.preventDefault();
+    // let converters = this.state.converterCount + 1;
+    // console.log(converters);
+
+    this.setState({
+      converterCount: [...this.state.converterCount, "converter"]
+    });
+    // return (
+    //   <React.Fragment>
+    //     <CurrentInputForm />
+    //   </React.Fragment>
+    // );
+  };
+
+  renderCurrencyConverters = () => {
+    console.log(this.state.converterCount);
+    // let i = 0;
+    // while (i < this.state.converterCount) {
+    //   console.log(`running ${this.state.converterCount} times`);
+    //   i++;
+    //   return <CurrentInputForm />;
+    // }
+    return this.state.converterCount.map(converter => {
+      return <CurrentInputForm />;
+    });
   };
 
   createOptions = () => {
@@ -95,6 +121,7 @@ class Trips extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <React.Fragment>
         <h1> Track Exchange Rates for your trip! </h1>
@@ -155,19 +182,20 @@ class Trips extends Component {
             exchangeRate={this.state.exchangeRate}
             desiredCurrAmount={this.state.desiredCurrAmount}
           />
-          <button className="button" onClick={this.handleAddCurrencies}>
-            Add additional currencies to your trip
-          </button>
           <br /> <br />
-          <div className="clearButton">
-            <input
-              className="button"
-              onClick={this.handleHistoricalClickClear}
-              type="submit"
-              value="Return to Current Rate Converter"
-            />
-          </div>
         </form>
+        {this.renderCurrencyConverters()}
+        <div className="clearButton">
+          <input
+            className="button"
+            onClick={this.handleHistoricalClickClear}
+            type="submit"
+            value="Return to Current Rate Converter"
+          />
+        </div>
+        <button className="button" onClick={this.handleAddCurrencies}>
+          Add additional currencies to your trip
+        </button>
       </React.Fragment>
     );
   }
