@@ -55,6 +55,9 @@ class CurrentDataContainer extends Component {
             value="View Historical Data"
           />
         ) : null}
+        <br />
+        <br />
+
         <div className="tripsButton" />
 
         {this.state.trips === false && this.state.historical === false ? (

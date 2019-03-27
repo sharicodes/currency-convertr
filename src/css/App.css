@@ -17,7 +17,7 @@
 .NavBar {
   border-radius: 0px;
   margin-right: 15px;
-  padding: 5px 5px;
+  padding: 15px 5px;
   border: 10px;
   border-style: solid;
   border-color: #163913;
@@ -30,7 +30,7 @@
   background-image: url("../background2.jpg");
 }
 .button {
-  font-size: 12px;
+  font-size: 18px;
   color: #163913;
 }
 .loginButton {
@@ -63,7 +63,7 @@
 }
 
 .inputButton {
-  font-size: 15px;
+  font-size: 18px;
   color: #163913;
 }
 .convertButton {
@@ -89,7 +89,7 @@
   font-size: 18px;
 }
 .CurrentInputForm {
-  font-size: 18px;
+  font-size: 20px;
 }
 .HistoricalInputForm {
   font-size: 20px;

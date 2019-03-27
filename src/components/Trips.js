@@ -37,18 +37,18 @@ class Trips extends Component {
         });
       });
   }
-  handleSaveTrip = () => {
-    //console.log("here");
-    this.setState({
-      save: true
-    });
-  };
-
-  showSave = () => {
-    if (this.state.save === true) {
-      return <SaveTrip />;
-    }
-  };
+  // handleSaveTrip = () => {
+  //   //console.log("here");
+  //   this.setState({
+  //     save: true
+  //   });
+  // };
+  //
+  // showSave = () => {
+  //   if (this.state.save === true) {
+  //     return <SaveTrip />;
+  //   }
+  // };
   handleChange = event => {
     //  console.log(event.target.name, event.target.value);
     this.setState({
@@ -146,7 +146,7 @@ class Trips extends Component {
               value="Return to Current Rate Converter"
             />
           </div>
-          <h1> Track Exchange Rates for your trip! </h1>
+          <h2> Calculate Exchange Rates for your trip- </h2>
           <label>Enter a name for your trip </label>
           <input
             className="inputButton"
@@ -211,16 +211,17 @@ class Trips extends Component {
         <button className="button" onClick={this.handleAddCurrencies}>
           Add additional currencies to your trip
         </button>
-
-        <br />
-        <br />
-        <button className="button" onClick={this.handleSaveTrip}>
-          Save this trip
-        </button>
-        {this.showSave()}
       </React.Fragment>
     );
   }
 }
 
 export default Trips;
+//
+//
+// <br />
+// <br />
+// <button className="button" onClick={this.handleSaveTrip}>
+//   Save this trip
+// </button>
+// {this.showSave()}
