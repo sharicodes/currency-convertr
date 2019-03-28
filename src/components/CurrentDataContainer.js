@@ -3,6 +3,7 @@ import CurrentInputForm from "./CurrentInputForm";
 import HistoricalDataForm from "./HistoricalDataForm";
 import Trips from "./Trips";
 import background from "../background.jpg";
+import banknotes from "../banknotes.jpg";
 
 class CurrentDataContainer extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class CurrentDataContainer extends Component {
             className="button"
             onClick={this.showHistorical}
             type="submit"
-            value="View Historical Data"
+            value="View Historical Rate Trends"
           />
         ) : null}
         <br />
@@ -72,7 +73,7 @@ class CurrentDataContainer extends Component {
         <br />
         <br />
         <div className="CurrentDataContainer">
-          {<img src={background} className="background" alt="currency" />}
+          {<img src={banknotes} className="background" alt="currency" />}
         </div>
       </div>
     );

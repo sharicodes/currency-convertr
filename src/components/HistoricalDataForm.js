@@ -49,8 +49,16 @@ class HistoricalDataForm extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1> Historical Rates- 5 Year trend </h1>
         <form className="HistoricalInputForm">
+          <div className="clearButton">
+            <input
+              className="button"
+              onClick={this.handleHistoricalClickClear}
+              type="submit"
+              value="Return to Current Rate Converter"
+            />
+          </div>
+          <h1> Historical Rates- 5 Year trend </h1>
           <label>Enter the currency you have: </label>
           <input
             className="button"
@@ -69,14 +77,6 @@ class HistoricalDataForm extends Component {
             {this.createHistoricalOptions()}
           </select>
           <br /> <br />
-          <div className="clearButton">
-            <input
-              className="button"
-              onClick={this.handleHistoricalClickClear}
-              type="submit"
-              value="Return to Current Rate Converter"
-            />
-          </div>
         </form>
         <AreaChart
           colors={["#163913"]}
