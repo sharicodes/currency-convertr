@@ -106,7 +106,6 @@ class CurrentInputForm extends Component {
             type="text"
             name="baseCurrName"
             value={this.state.baseCurrName}
-            onChange={this.handleChange}
           />
           <label> Enter the amount you want to exchange: </label>
           <input

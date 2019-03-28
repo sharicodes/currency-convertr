@@ -1,235 +1,235 @@
 const historicalRates = {
   USDARS: {
-    five_year: 8.001127,
-    three_year: 14.7545,
-    one_year: 20.108999,
-    six_month: 36.842041,
-    three_month: 37.654502,
-    current: 40.733202
+    "Five Year": 8.001127,
+    "Three Year": 14.7545,
+    "One Year": 20.108999,
+    "Six Month": 36.842041,
+    "Three Month": 37.654502,
+    "One Month": 40.733202
   },
   USDAUD: {
-    five_year: 1.082121,
-    three_year: 1.301655,
-    one_year: 1.301395,
-    six_month: 1.390604,
-    three_month: 1.41893,
-    current: 1.41536
+    "Five Year": 1.082121,
+    "Three Year": 1.301655,
+    "One Year": 1.301395,
+    "Six Month": 1.390604,
+    "Three Month": 1.41893,
+    "One Month": 1.41536
   },
   USDBRL: {
-    five_year: 2.26262,
-    three_year: 3.560799,
-    one_year: 3.304394,
-    six_month: 4.055304,
-    three_month: 3.881403,
-    current: 3.847798
+    "Five Year": 2.26262,
+    "Three Year": 3.560799,
+    "One Year": 3.304394,
+    "Six Month": 4.055304,
+    "Three Month": 3.881403,
+    "One Month": 3.847798
   },
   USDBTC: {
-    five_year: 0.002077,
-    three_year: 0.002403,
-    one_year: 0.000147,
-    six_month: 0.000143,
-    three_month: 0.00026,
-    current: 0.000258
+    "Five Year": 0.002077,
+    "Three Year": 0.002403,
+    "One Year": 0.000147,
+    "Six Month": 0.000143,
+    "Three Month": 0.00026,
+    "One Month": 0.000258
   },
   USDCAD: {
-    five_year: 1.103364,
-    three_year: 1.300295,
-    one_year: 1.2893,
-    six_month: 1.30475,
-    three_month: 1.362635,
-    current: 1.33266
+    "Five Year": 1.103364,
+    "Three Year": 1.300295,
+    "One Year": 1.2893,
+    "Six Month": 1.30475,
+    "Three Month": 1.362635,
+    "One Month": 1.33266
   },
   USDCHF: {
-    five_year: 0.883941,
-    three_year: 0.958984,
-    one_year: 0.95457,
-    six_month: 0.968985,
-    three_month: 0.9822,
-    current: 1.003905
+    "Five Year": 0.883941,
+    "Three Year": 0.958984,
+    "One Year": 0.95457,
+    "Six Month": 0.968985,
+    "Three Month": 0.9822,
+    "One Month": 1.003905
   },
   USDCNY: {
-    five_year: 6.199854,
-    three_year: 6.4741,
-    one_year: 6.272497,
-    six_month: 6.830395,
-    three_month: 6.878501,
-    current: 6.7229
+    "Five Year": 6.199854,
+    "Three Year": 6.4741,
+    "One Year": 6.272497,
+    "Six Month": 6.830395,
+    "Three Month": 6.878501,
+    "One Month": 6.7229
   },
   USDDKK: {
-    five_year: 5.414224,
-    three_year: 6.544135,
-    one_year: 6.05275,
-    six_month: 6.425504,
-    three_month: 6.513982,
-    current: 6.60313
+    "Five Year": 5.414224,
+    "Three Year": 6.544135,
+    "One Year": 6.05275,
+    "Six Month": 6.425504,
+    "Three Month": 6.513982,
+    "One Month": 6.60313
   },
   USDEUR: {
-    five_year: 0.724967,
-    three_year: 0.8777,
-    one_year: 0.811901,
-    six_month: 0.860475,
-    three_month: 0.872505,
-    current: 0.88484
+    "Five Year": 0.724967,
+    "Three Year": 0.8777,
+    "One Year": 0.811901,
+    "Six Month": 0.860475,
+    "Three Month": 0.872505,
+    "One Month": 0.88484
   },
   USDGBP: {
-    five_year: 0.601339,
-    three_year: 0.702744,
-    one_year: 0.71235,
-    six_month: 0.771545,
-    three_month: 0.7841,
-    current: 0.75625
+    "Five Year": 0.601339,
+    "Three Year": 0.702744,
+    "One Year": 0.71235,
+    "Six Month": 0.771545,
+    "Three Month": 0.7841,
+    "One Month": 0.75625
   },
   USDHKD: {
-    five_year: 7.756706,
-    three_year: 7.753325,
-    one_year: 7.848497,
-    six_month: 7.84945,
-    three_month: 7.83372,
-    current: 7.849778
+    "Five Year": 7.756706,
+    "Three Year": 7.753325,
+    "One Year": 7.848497,
+    "Six Month": 7.84945,
+    "Three Month": 7.83372,
+    "One Month": 7.849778
   },
   USDHUF: {
-    five_year: 222.778101,
-    three_year: 275.585501,
-    one_year: 253.529999,
-    six_month: 281.520388,
-    three_month: 280.269891,
-    current: 278.180235
+    "Five Year": 222.778101,
+    "Three Year": 275.585501,
+    "One Year": 253.529999,
+    "Six Month": 281.520388,
+    "Three Month": 280.269891,
+    "One Month": 278.180235
   },
   USDIDR: {
-    five_year: 11305.066667,
-    three_year: 13189.433333,
-    one_year: 13760,
-    six_month: 14730,
-    three_month: 14470,
-    current: 14268
+    "Five Year": 11305.066667,
+    "Three Year": 13189.433333,
+    "One Year": 13760,
+    "Six Month": 14730,
+    "Three Month": 14470,
+    "One Month": 14268
   },
   USDILS: {
-    five_year: 3.479364,
-    three_year: 3.775141,
-    one_year: 3.494903,
-    six_month: 3.60345,
-    three_month: 3.73717,
-    current: 3.607197
+    "Five Year": 3.479364,
+    "Three Year": 3.775141,
+    "One Year": 3.494903,
+    "Six Month": 3.60345,
+    "Three Month": 3.73717,
+    "One Month": 3.607197
   },
   USDINR: {
-    five_year: 59.93185,
-    three_year: 66.21824,
-    one_year: 65.110001,
-    six_month: 71.00504,
-    three_month: 69.740272,
-    current: 69.358007
+    "Five Year": 59.93185,
+    "Three Year": 66.21824,
+    "One Year": 65.110001,
+    "Six Month": 71.00504,
+    "Three Month": 69.740272,
+    "One Month": 69.358007
   },
   USDJPY: {
-    five_year: 103.5259,
-    three_year: 111.803901,
-    one_year: 106.311996,
-    six_month: 111.040385,
-    three_month: 109.673505,
-    current: 111.694019
+    "Five Year": 103.5259,
+    "Three Year": 111.803901,
+    "One Year": 106.311996,
+    "Six Month": 111.040385,
+    "Three Month": 109.673505,
+    "One Month": 111.694019
   },
   USDKRW: {
-    five_year: 1061.183325,
-    three_year: 1148.039998,
-    one_year: 899.999921,
-    six_month: 1115.640384,
-    three_month: 1114.796392,
-    current: 1136.669711
+    "Five Year": 1061.183325,
+    "Three Year": 1148.039998,
+    "One Year": 899.999921,
+    "Six Month": 1115.640384,
+    "Three Month": 1114.796392,
+    "One Month": 1136.669711
   },
   USDMXN: {
-    five_year: 13.05514,
-    three_year: 17.32145,
-    one_year: 18.196398,
-    six_month: 19.084104,
-    three_month: 19.633745,
-    current: 19.322801
+    "Five Year": 13.05514,
+    "Three Year": 17.32145,
+    "One Year": 18.196398,
+    "Six Month": 19.084104,
+    "Three Month": 19.633745,
+    "One Month": 19.322801
   },
   USDMYR: {
-    five_year: 3.26166,
-    three_year: 3.89498,
-    one_year: 3.86199,
-    six_month: 4.117039,
-    three_month: 4.131981,
-    current: 4.091496
+    "Five Year": 3.26166,
+    "Three Year": 3.89498,
+    "One Year": 3.86199,
+    "Six Month": 4.117039,
+    "Three Month": 4.131981,
+    "One Month": 4.091496
   },
   USDNOK: {
-    five_year: 5.986877,
-    three_year: 8.312992,
-    one_year: 7.85364,
-    six_month: 8.387204,
-    three_month: 8.64769,
-    current: 8.57408
+    "Five Year": 5.986877,
+    "Three Year": 8.312992,
+    "One Year": 7.85364,
+    "Six Month": 8.387204,
+    "Three Month": 8.64769,
+    "One Month": 8.57408
   },
   USDNZD: {
-    five_year: 1.160002,
-    three_year: 1.448348,
-    one_year: 1.3817,
-    six_month: 1.51125,
-    three_month: 1.48973,
-    current: 1.465335
+    "Five Year": 1.160002,
+    "Three Year": 1.448348,
+    "One Year": 1.3817,
+    "Six Month": 1.51125,
+    "Three Month": 1.48973,
+    "One Month": 1.465335
   },
   USDPHP: {
-    five_year: 44.75506,
-    three_year: 46.04287,
-    one_year: 52.119999,
-    six_month: 53.467504,
-    three_month: 52.574989,
-    current: 52.7305
+    "Five Year": 44.75506,
+    "Three Year": 46.04287,
+    "One Year": 52.119999,
+    "Six Month": 53.467504,
+    "Three Month": 52.574989,
+    "One Month": 52.7305
   },
   USDRUB: {
-    five_year: 35.1257,
-    three_year: 67.63453,
-    one_year: 57.196399,
-    six_month: 67.516038,
-    three_month: 68.927505,
-    current: 65.524198
+    "Five Year": 35.1257,
+    "Three Year": 67.63453,
+    "One Year": 57.196399,
+    "Six Month": 67.516038,
+    "Three Month": 68.927505,
+    "One Month": 65.524198
   },
   USDSEK: {
-    five_year: 6.459206,
-    three_year: 8.135383,
-    one_year: 8.351301,
-    six_month: 9.148904,
-    three_month: 8.867968,
-    current: 9.310499
+    "Five Year": 6.459206,
+    "Three Year": 8.135383,
+    "One Year": 8.351301,
+    "Six Month": 9.148904,
+    "Three Month": 8.867968,
+    "One Month": 9.310499
   },
   USDSGD: {
-    five_year: 1.259366,
-    three_year: 1.350097,
-    one_year: 1.31121,
-    six_month: 1.372104,
-    three_month: 1.362899,
-    current: 1.35568
+    "Five Year": 1.259366,
+    "Three Year": 1.350097,
+    "One Year": 1.31121,
+    "Six Month": 1.372104,
+    "Three Month": 1.362899,
+    "One Month": 1.35568
   },
   USDTHB: {
-    five_year: 32.36536,
-    three_year: 35.17005,
-    one_year: 31.160488,
-    six_month: 32.717038,
-    three_month: 32.347503,
-    current: 31.783031
+    "Five Year": 32.36536,
+    "Three Year": 35.17005,
+    "One Year": 31.160488,
+    "Six Month": 32.717038,
+    "Three Month": 32.347503,
+    "One Month": 31.783031
   },
   USDTRY: {
-    five_year: 2.142091,
-    three_year: 2.823446,
-    one_year: 3.951302,
-    six_month: 6.545204,
-    three_month: 5.2897,
-    current: 5.46712
+    "Five Year": 2.142091,
+    "Three Year": 2.823446,
+    "One Year": 3.951302,
+    "Six Month": 6.545204,
+    "Three Month": 5.2897,
+    "One Month": 5.46712
   },
   USDUSD: {
-    five_year: 1,
-    three_year: 1,
-    one_year: 1,
-    six_month: 1,
-    three_month: 1,
-    current: 1
+    "Five Year": 1,
+    "Three Year": 1,
+    "One Year": 1,
+    "Six Month": 1,
+    "Three Month": 1,
+    "One Month": 1
   },
   USDZAR: {
-    five_year: 10.57832,
-    three_year: 14.72558,
-    one_year: 11.8338,
-    six_month: 14.687504,
-    three_month: 14.39765,
-    current: 14.536402
+    "Five Year": 10.57832,
+    "Three Year": 14.72558,
+    "One Year": 11.8338,
+    "Six Month": 14.687504,
+    "Three Month": 14.39765,
+    "One Month": 14.536402
   }
 };
 
