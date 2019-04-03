@@ -28,7 +28,7 @@ class Trips extends Component {
     }
   };
   handleChange = event => {
-    console.log(event.target.name, event.target.value);
+    //console.log(event.target.name, event.target.value);
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -49,7 +49,7 @@ class Trips extends Component {
   };
 
   render() {
-    console.log(this.state);
+    //console.log(this.state);
     return (
       <React.Fragment>
         <form className="CurrentInputForm">
