@@ -22,9 +22,9 @@ class CurrentInputForm extends Component {
     fetch(
       // real endpoint
 
-      //"http://www.apilayer.net/api/live?access_key=b9bba49cc12e1fab9b229b77c1868a4a"
+      "http://www.apilayer.net/api/live?access_key=b9bba49cc12e1fab9b229b77c1868a4a"
       // json-server --watch db.json -p 4000
-      "http://localhost:4000/quotes"
+      //  "http://localhost:4000/quotes"
     )
       .then(response => response.json())
       .then(data => {
